@@ -208,6 +208,7 @@ bool RandomPlayerbotMgr::ProcessBot(uint32 bot)
 
     if (!GetPlayerBot(bot))
     {
+        sLog.outDetail("Bot %d logged in", bot);
         AddPlayerBot(bot, 0);
         if (!GetEventValue(bot, "online"))
         {
@@ -391,6 +392,7 @@ void RandomPlayerbotMgr::RandomTeleportForLevel(Player* bot)
     "INNER JOIN `creature_template` `t` ON `c`.`id` = `t`.`entry` GROUP BY `t`.`entry`) `q` "
         "WHERE `delta` >= 0 AND `delta` <= %u AND `map` IN (%s)",
         bot->getLevel(), sPlayerbotAIConfig.randomBotTeleLevel, sPlayerbotAIConfig.randomBotMapsAsString.c_str());
+
     if (results)
     {
         do
@@ -957,10 +959,13 @@ void RandomPlayerbotMgr::OnPlayerLogout(Player* player)
         }
     }
 
-    vector<Player*>::iterator i = find(players.begin(), players.end(), player);
-    if (i != players.end())
+    if (!player->GetPlayerbotAI())
     {
-        players.erase(i);
+        vector<Player*>::iterator i = find(players.begin(), players.end(), player);
+        if (i != players.end())
+        {
+            players.erase(i);
+        }
     }
 }
 

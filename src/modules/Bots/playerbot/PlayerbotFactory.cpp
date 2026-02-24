@@ -261,6 +261,7 @@ void PlayerbotFactory::InitPet()
             uint32 pet_number = sObjectMgr.GeneratePetNumber();
             CreatureCreatePos pos(map, bot->GetPositionX(), bot->GetPositionY(), bot->GetPositionZ(), bot->GetOrientation());
             pet = new Pet(HUNTER_PET);
+
             if (!pet->Create(guid, pos, co, pet_number))
             {
                 delete pet;
@@ -2077,6 +2078,9 @@ void PlayerbotFactory::InitInventorySkill()
     {
         StoreItem(16207, 1); // Runed Arcanite Rod
     }
+    /*if (bot->HasSkill(SKILL_INSCRIPTION)) {
+        StoreItem(39505, 1); // Virtuoso Inking Set
+    }*/
     if (bot->HasSkill(SKILL_SKINNING))
     {
         StoreItem(7005, 1); // Skinning Knife
