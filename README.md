@@ -6,7 +6,7 @@ alt="GitHub last commit" border=0 valign="top"/>][61]
 [<img alt="Downloads on GitHub" src="https://img.shields.io/github/downloads/mangosone/server/total.svg?style=flat-square" border=0 valign="top"/>][61]
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>Build Status:</b>
- Linux/MAC: [<img src='https://github.com/mangosone/server/actions/workflows/core_build.yml/badge.svg' border=0 valign="middle">][10]
+ Linux/MAC: [<img src='https://github.com/mangosone/server/actions/workflows/core_linux_build.yml/badge.svg' border=0 valign="middle">][10]
  Windows: [<img src='https://ci.appveyor.com/api/projects/status/github/mangosone/server?branch=master&svg=true' border=0 valign="middle">][11]
  <br><b>Repository Status:</b> 
 [<img src='https://api.codacy.com/project/badge/Grade/7a0ddb85e7494159bd71621d41cbbf51' border=0 valign="middle"/>][12]
